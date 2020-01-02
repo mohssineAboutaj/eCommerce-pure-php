@@ -6,5 +6,5 @@ An eCommerce full website pure php & mySQL
 2. Move the folder to your localhost (or real host)
 3. Visit the url `HOST_NAME/shop/admin`
 4. Default login info is
-	+ username: admin
-	+ password: admin
+	+ username: *admin*
+	+ password: *admin*

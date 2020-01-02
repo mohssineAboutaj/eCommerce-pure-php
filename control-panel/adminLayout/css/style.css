@@ -1,0 +1,417 @@
+/*
+  * Created by : Mohssine Aboutaj
+  * Date       : 11/11/2017
+  * License    : for sale
+  * E-mail     : mohssineaboutajtemplates@gmail.com
+*/
+@font-face : {
+  font-family: Economica;
+  src: url("../fonts/Economica-Bold-OTF.otf"); }
+/* Start Grouping elements */
+.show, .add-new, .adminArea .stat .column a, .settings .option, .settings .option input:checked ~ .checkmark:after, .bootstrap-tagsinput {
+  display: block; }
+
+.reset-all, .reset-all * {
+  padding: 0;
+  margin: 0; }
+
+form, .adminAreaLoginPage, .adminAreaLoginPage .adminLogin, .adminArea .column, .adminArea .latest .table {
+  overflow: hidden; }
+
+.reset-all, .reset-all * {
+  float: none; }
+
+.reset-all, .reset-all * {
+  border: none; }
+
+.no-decore, .reset-all, .reset-all *, .add-new, nav *, .adminArea a, .no-decore li, .reset-all li, .add-new li, nav * li, .adminArea a li, .no-decore a, .reset-all a, .add-new a, nav * a, .adminArea a a {
+  text-decoration: none;
+  list-style: none; }
+
+.no-decore a, .reset-all a, .add-new a, nav * a, .adminArea a a {
+  color: #EAEAEA; }
+
+h1, h2, h3, h4, h5, h6, table thead, .add-new, .adminAreaLoginPage .adminLogin h3, .adminArea .column, footer {
+  text-align: center; }
+
+h1, h2, h3, h4, h5, h6, table thead, form, .btn, #sorting-container select, nav, .adminAreaLoginPage .adminLogin, .adminArea .stat .column .card h6, footer {
+  text-transform: capitalize; }
+
+input[type='submit'] {
+  text-transform: uppercase; }
+
+.section, body, .adminArea .column, .settings .option, footer {
+  position: relative; }
+
+.section-separator, .section-separator::after, .section-separator::before, .settings .option input, .settings .option .checkmark, .settings .option .checkmark:after {
+  position: absolute; }
+
+.adminAreaLoginPage {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.add-new {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%; }
+
+input[type='submit'], nav li, .adminArea .stat .column .card {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer; }
+
+.hide, .settings .option .checkmark:after {
+  display: none; }
+
+.adminArea .stat .column .card {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+
+.full-centering {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex; }
+
+.full-centering {
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.full-centering {
+  justify-content: center; }
+
+.full-centering {
+  -webkit-align-items: center;
+  align-items: center; }
+
+.full-centering {
+  width: 100%; }
+
+.full-centering {
+  height: 100%; }
+
+.adminAreaLoginPage .adminLogin {
+  background-color: rgba(39, 39, 39, 0.75); }
+
+.section {
+  padding: 50px 0; }
+
+.section-separator {
+  width: 100%;
+  height: 0;
+  background-color: none !important;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+.section-separator::after, .section-separator::before {
+  content: '';
+  width: 50%;
+  height: 50px;
+  top: -25px;
+  -webkit-box-shadow: 0 10px 10px inherit;
+  -moz-box-shadow: 0 10px 10px inherit;
+  -ms-box-shadow: 0 10px 10px inherit;
+  -o-box-shadow: 0 10px 10px inherit;
+  box-shadow: 0 10px 10px inherit;
+  z-index: 2; }
+
+.section-separator::after {
+  left: 0;
+  -webkit-transform: skewY(5deg);
+  -moz-transform: skewY(5deg);
+  -ms-transform: skewY(5deg);
+  -o-transform: skewY(5deg);
+  transform: skewY(5deg); }
+
+.section-separator::before {
+  right: 0;
+  -webkit-transform: skewY(-5deg);
+  -moz-transform: skewY(-5deg);
+  -ms-transform: skewY(-5deg);
+  -o-transform: skewY(-5deg);
+  transform: skewY(-5deg); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Economica, arial;
+  font-weight: bold;
+  margin: 20px 0; }
+
+/* End Grouping elements */
+/* Start global styles */
+body {
+  background-color: #EAEAEA;
+  font-family: Economica, arial; }
+
+.alert-success .fa-check {
+  color: #28a745; }
+
+.alert-danger .fa-times {
+  color: #dc3545; }
+
+input[type='submit'] {
+  font-family: 'Font Awesome 5 Free', arial;
+  font-weight: 900;
+  background-color: #28a745;
+  color: #FFFFFF;
+  padding: 5px; }
+
+input[type='submit']:hover {
+  background-color: rgba(40, 167, 69, 0.9); }
+
+table {
+  -webkit-box-shadow: 10px 10px 10px rgba(39, 39, 39, 0.1);
+  -moz-box-shadow: 10px 10px 10px rgba(39, 39, 39, 0.1);
+  -ms-box-shadow: 10px 10px 10px rgba(39, 39, 39, 0.1);
+  -o-box-shadow: 10px 10px 10px rgba(39, 39, 39, 0.1);
+  box-shadow: 10px 10px 10px rgba(39, 39, 39, 0.1);
+  border: 1px solid #272727; }
+
+table thead {
+  color: #FFFFFF; }
+
+table .btn {
+  margin: 4px; }
+
+form {
+  margin: 50px auto;
+  padding: 20px; }
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form input[type="email"],
+form input[type="text"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 5px; }
+
+form input[type="submit"] {
+  float: right; }
+
+div.btn {
+  margin: 0 5px 5px 5px; }
+
+.add-new {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #007bff;
+  z-index: 1; }
+
+.add-new * {
+  color: #FFFFFF; }
+
+#sorting-container {
+  margin-bottom: 20px; }
+
+#sorting-container > div {
+  margin: 5px 0; }
+
+#sorting-container select {
+  width: 100%; }
+
+/* End global styles */
+/* Start navbar */
+nav {
+  padding: 0 15px !important;
+  background-color: #272727;
+  font-family: Economica, arial; }
+
+nav * {
+  color: #FFFFFF; }
+
+nav a,
+nav a:hover,
+nav a:focus {
+  color: inherit; }
+
+nav .navbar-brand {
+  color: #FFFFFF; }
+
+nav li {
+  padding: 5px;
+  border-bottom: 3px solid transparent; }
+
+nav .navbar-nav li:hover,
+nav .navbar-nav li:focus,
+nav .navbar-nav .active {
+  border-bottom: 3px solid #FFFFFF; }
+
+nav .dropdown-menu {
+  background-color: #272727; }
+
+nav .dropdown-menu * {
+  color: #FFFFFF; }
+
+nav .dropdown-menu .dropdown-item:hover *,
+nav .dropdown-menu .dropdown-item:focus * {
+  color: #272727; }
+
+/* End navbar */
+/* Start login page */
+.adminAreaLoginPage {
+  background-image: url("../img/admin.jpg");
+  padding: 20px 0;
+  color: #FFFFFF; }
+
+.adminAreaLoginPage .adminLogin {
+  margin: 50px auto;
+  padding: 30px;
+  color: #FFFFFF; }
+
+.adminAreaLoginPage .adminLogin input:not([type="submit"]) {
+  background: none;
+  border: 1px solid #ABB7B7;
+  color: #FFFFFF; }
+
+/* End login page */
+/* Start adminArea page */
+.adminArea {
+  margin-bottom: 20px; }
+
+.adminArea a {
+  color: #EAEAEA; }
+
+.adminArea .stat * {
+  color: #EAEAEA; }
+
+.adminArea .column {
+  margin-bottom: 20px; }
+
+.adminArea .stat .column .card i,
+.adminArea .stat .column .card span {
+  font-size: 3em; }
+
+.adminArea .stat .column .card h6 {
+  margin: 10px 0; }
+
+.adminArea .stat .column .card * {
+  color: #FFFFFF; }
+
+.adminArea .stat .column:nth-child(even) .card {
+  background-color: #26A65B; }
+
+.adminArea .stat .column:nth-child(even):hover .card {
+  background-color: rgba(38, 166, 91, 0.9); }
+
+.adminArea .stat .column:nth-child(odd) .card {
+  background-color: #F22613; }
+
+.adminArea .stat .column:nth-child(odd):hover .card {
+  background-color: rgba(242, 38, 19, 0.9); }
+
+.adminArea .latest .table {
+  text-align: left;
+  margin-bottom: 10px;
+  background-color: #FFFFFF; }
+
+.adminArea .latest .table thead {
+  cursor: pointer; }
+
+.adminArea .latest .table .comments.row {
+  margin: 5px; }
+
+/* End adminArea page */
+/* Start category page */
+/* End category page */
+/* Start items page */
+/* End items page */
+/* Start members page */
+.members-table img {
+  width: 30px;
+  height: 30px; }
+
+/* End members page */
+/* Start settings page */
+.settings .option {
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+.settings .option label {
+  cursor: pointer; }
+
+.settings .option input {
+  opacity: 0;
+  cursor: pointer; }
+
+.settings .option .checkmark {
+  top: 5px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #272727; }
+
+.settings .option input:checked ~ .checkmark {
+  background-color: #007bff; }
+
+.settings .option .checkmark:after {
+  content: "";
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #FFFFFF;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.settings input[type="submit"] {
+  padding: 5px 25px; }
+
+/* End settings page */
+/* Start footer */
+footer {
+  background-color: #272727;
+  padding: 10px 0px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+footer * {
+  color: #FFFFFF; }
+
+footer b {
+  color: #EAEAEA; }
+
+/* End footer */
+/* Start tagisinput plugin costomize */
+.bootstrap-tagsinput .tag {
+  background-color: #26A65B; }
+
+/* End tagisinput plugin costomize */
+/* Start Start media for screens max-width = 991px */
+@media (max-width: 991px) {
+  nav {
+    padding: 15px !important; } }
+
+/*# sourceMappingURL=style.css.map */

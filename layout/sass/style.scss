@@ -1,0 +1,353 @@
+/*
+  * Created by : Mohssine Aboutaj
+  * Date       : 11/11/2017
+  * License    : for sale
+  * E-mail     : mohssineaboutajtemplates@gmail.com
+*/
+
+// Global functions and Variables
+
+$primary  : #96281B;
+$secondary: #ABB7B7;
+$light    : #EAEAEA;
+$dark     : #272727;
+$white    : #FFFFFF;
+////////////////////
+
+// Fonts directory
+$fontDir: '../fonts/';
+
+// Main website fonts
+@font-face: {
+  font-family: Ecomica;
+  src: url('#{$fontDir}Economica-Bold-OTF.otf');
+}
+
+@font-face: {
+  font-family: openSans;
+  src: url('#{$fontDir}OpenSans-Regular.ttf');
+}
+
+$mainFont: Ecomica, arial;
+$secondFont: openSans, tahoma;
+
+/* Start Grouping elements */
+@import "global";
+%fixedImg img {
+  width: 100%;
+  height: 100%;
+  @extend %overHide;
+}
+
+%headingGlobalStyles {
+  font-family: $mainFont;
+  font-weight: bold;
+  @extend %tc;
+  @extend %cap;
+  margin: 20px 0;
+}
+/* End Grouping elements */
+
+/* Start global styles */
+body {
+  background-color: $light;
+  @extend %rel;
+  font-family: $mainFont;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} { @extend %headingGlobalStyles }
+}
+
+.alert-success .fa-check { color: $green }
+.alert-danger .fa-times { color: $red }
+
+form {
+  padding: 20px;
+  @extend %cap;
+  @extend %overHide;
+}
+
+form input[type="text"], 
+form input[type="number"], 
+form input[type="password"], 
+form input[type="email"], 
+form input[type="text"], 
+form select, 
+form textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+form input[type="submit"], 
+form input[type="reset"] {
+  float: $right;
+  margin: 0 5px;
+  @extend %upper;
+  @extend %trans;
+  font-family: 'Font Awesome 5 Free', arial;
+  font-weight: 900;
+  color: $white;
+  padding: 5px;
+}
+
+.btn { @extend %cap }
+
+a, a:hover, a:focus {
+  color: inherit;
+  @extend .no-decore;
+}
+
+.item-box .ads-img {
+  @extend %overHide;
+  @extend %rel;
+}
+
+.item-box .price {
+  @extend %abs;
+  top: 5%;
+  left: -25%;
+  padding: 5px 0;
+  margin: 10px;
+  width: 75%;
+  @extend %tc;
+  background-color: $primary;
+  color: $white;
+  @include prefix(transform, rotateZ(-45deg));
+}
+
+.item-box .date {
+  text-align: right;
+  color: $primary;
+  font-size: .75em;
+}
+
+.not-approve {
+  color: $primary;
+  font-size: .5em;
+}
+
+.card { margin-bottom: 20px }
+
+.card-header {
+  background-color: $blue;
+  color: $white;
+  @extend %cap;
+  @extend %tc;
+  font-size: 1.5em;
+}
+/* End global styles */
+
+/* Start navbar */
+nav {
+  padding: 0 15px !important;
+  background-color: $dark;
+  @extend %cap;
+  font-family: $mainFont;
+}
+
+nav * { color: $white }
+
+nav a,
+nav a:hover,
+nav a:focus {
+  color: inherit
+}
+
+nav .navbar-brand, 
+nav .navbar-brand:hover, 
+nav .navbar-brand:focus {
+  color: $white;
+}
+
+nav li {
+  @extend %trans;
+  padding: 5px;
+  border-bottom: 3px solid transparent;
+}
+
+nav .navbar-nav li:hover, 
+nav .navbar-nav li:focus, 
+nav .navbar-nav .active {
+  border-bottom: 3px solid $white;
+}
+
+nav .dropdown-menu { background-color: $dark }
+
+nav .dropdown-menu * { color: $white }
+
+nav .dropdown-menu .dropdown-item:hover *,
+nav .dropdown-menu .dropdown-item:focus * {
+  color: $dark;
+}
+
+nav img {
+  height: 25px;
+  @extend %circle;
+}
+
+nav .not-allowed { cursor: not-allowed }
+/* End navbar */
+
+/* Start login/sign-up page */
+.loginPage {
+  background-image: url('../img/login.jpg');
+  @extend %cover;
+  @extend %tc;
+  min-height: calc(100vh - 65px);
+  padding: 30px 0;
+}
+
+.loginPage span {
+  color: $secondary;
+  @extend %trans;
+}
+
+.loginPage .selected,
+.loginPage span:hover {
+  color: $light;
+}
+
+.loginPage .containerForms {
+  @extend %bgdark75;
+  margin: auto;
+  max-width: 400px;
+  padding: 5px 0;
+  @extend %rad10px;
+}
+
+.loginPage form {
+  margin: 40px;
+}
+
+.loginPage form label {
+  color: $light;
+  @extend %cap;
+  @extend %tc;
+}
+
+.loginPage form input {
+  color: $light;
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 5px;
+  @extend %rad10px;
+  border: 1px solid $secondary;
+}
+
+.loginPage form input:not([type='submit']) {
+  background: none;
+}
+
+.loginPage form input::-webkit-input-placeholder { color: $secondary }
+.loginPage form input:-ms-input-placeholder { color: $secondary }
+.loginPage form input::-moz-placeholder { color: $secondary }
+
+.loginPage .signUpForm { @extend .hide }
+/* End login/sign-up page */
+
+/* Start profile page */
+.edit-profile-img {
+  @extend %rel;
+  @extend %block;
+}
+
+.edit-profile-img i {
+  @extend %abs;
+  top: 0;
+  #{$left}: 0;
+  padding: 5px;
+  background-color: $light;
+  cursor: pointer
+}
+/* End profile page */
+
+/* Start new ads page */
+.newAds { @extend %overHide }
+
+.live-preview p {
+  width: 100%;
+  padding: 10px;
+}
+/* End new ads page */
+
+/* Start showAds page */
+.showAds { @extend %overHide }
+
+.showAds .item-img, .showAds .item-info {
+  float: $left;
+}
+
+.showAds .item-info, .showAds .item-img img {
+  @extend %rad10px;
+  border: 1px solid $light;
+}
+
+.showAds .item-info {
+  @extend %cap;
+  @extend %overHide;
+}
+
+.showAds .item-info li { padding: 5px }
+
+.showAds .item-info li a { color: inherit }
+
+.showAds .item-info li:first-of-type * { margin: 0 }
+
+.showAds .item-info li:nth-of-type(odd) { background: $white }
+
+.showAds .item-info li:nth-of-type(even) { background: #eee }
+
+.showAds .item-info .price {
+  font-size: 1.5em;
+  @extend %bold;
+  margin-top: 20px;
+}
+
+.itemComments {
+  @extend %overHide;
+  margin: 20px 0;
+}
+
+.itemComments .row { margin-bottom: 15px; }
+
+.itemComments .user-info { @extend %bold }
+
+.itemComments .user-info a { color: inherit }
+
+.itemComments .user-cmnt {
+  @extend %rel;
+  @extend %rad10px;
+  padding: 5px;
+  background-color: $white;
+}
+
+.itemComments .user-cmnt::before {
+  content: "";
+  @extend %abs;
+  #{$left}: -20px;
+  top: 10px;
+  border-style: solid;
+  border-color: transparent $white transparent transparent;
+  border-width: 10px;
+}
+
+.itemComments .user-cmnt div {
+  font-size: .6em;
+  text-align: $right;
+}
+
+.please-log { margin-bottom: 20px }
+/* End showAds page */
+
+/* Start footer */
+footer {
+  padding: 5px 0px;
+  background-color: $dark;
+  @extend %tc;
+}
+
+footer * {
+  color: $white;
+}
+/* End footer */

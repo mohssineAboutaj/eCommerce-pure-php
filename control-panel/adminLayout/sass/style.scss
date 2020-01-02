@@ -1,0 +1,353 @@
+/*
+  * Created by : Mohssine Aboutaj
+  * Date       : 11/11/2017
+  * License    : for sale
+  * E-mail     : mohssineaboutajtemplates@gmail.com
+*/
+
+// website main colors
+$primary  : #26A65B;
+$secondary: #F22613;
+$gray     : #ABB7B7;
+$white    : #FFFFFF;
+$light    : #EAEAEA;
+$dark     : #272727;
+////////////////////
+
+// Images directory
+$imgDir: '../img/'; 
+// Fonts directory
+$fontDir: '../fonts/';
+
+// Main website fonts
+@font-face: {
+  font-family: Economica;
+  src: url('#{$fontDir}Economica-Bold-OTF.otf');
+}
+
+$mainFont: Economica, arial;
+$secondFont: tahoma, verdana;
+
+/* Start Grouping elements */
+@import "global";
+%headingGlobalStyles {
+  font-family: $mainFont;
+  font-weight: bold;
+  @extend %tc;
+  @extend %cap;
+  margin: 20px 0;
+}
+/* End Grouping elements */
+
+/* Start global styles */
+body {
+  background-color: $light;
+  @extend %rel;
+  font-family: $mainFont;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} { @extend %headingGlobalStyles }
+}
+
+.alert-success .fa-check { color: $green }
+.alert-danger .fa-times { color: $red }
+
+input[type='submit'] {
+  @extend %upper;
+  @extend %trans;
+  font-family: 'Font Awesome 5 Free', arial;
+  font-weight: 900;
+  background-color: $green;
+  color: $white;
+  padding: 5px;
+}
+
+input[type='submit']:hover { background-color: rgba($green, .9) }
+
+table {
+  @include prefix(box-shadow, 10px 10px 10px rgba($dark, .1));
+  border: 1px solid $dark;
+}
+
+table thead {
+  color: $white;
+  @extend %tc;
+  @extend %cap;
+}
+
+table .btn { margin: 4px }
+
+form {
+  margin: 50px auto;
+  padding: 20px;
+  @extend %cap;
+  @extend %overHide;
+}
+
+form input[type="text"], 
+form input[type="number"], 
+form input[type="password"], 
+form input[type="email"], 
+form input[type="text"], 
+form select, 
+form textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+form input[type="submit"] { float: $right }
+
+.btn { @extend %cap }
+
+div.btn { margin: 0 5px 5px 5px }
+
+.add-new {
+  position: fixed;
+  @extend %circle;
+  @extend .no-decore;
+  @extend %tc;
+  @extend %block;
+  bottom: 20px;
+  #{$left}: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: $blue;
+  z-index: 1;
+}
+
+.add-new * { color: $white }
+
+#sorting-container { margin-bottom: 20px }
+
+#sorting-container > div { margin: 5px 0 }
+
+#sorting-container select {
+  width: 100%;
+  @extend %cap;
+}
+/* End global styles */
+
+/* Start navbar */
+nav {
+  padding: 0 15px !important;
+  background-color: $dark;
+  @extend %cap;
+  font-family: $mainFont;
+}
+
+nav * {
+  @extend .no-decore;
+  color: $white;
+}
+
+nav a,
+nav a:hover,
+nav a:focus {
+  color: inherit
+}
+
+nav .navbar-brand { color: $white }
+
+nav li {
+  @extend %trans;
+  padding: 5px;
+  border-bottom: 3px solid transparent;
+}
+
+nav .navbar-nav li:hover, 
+nav .navbar-nav li:focus, 
+nav .navbar-nav .active {
+  border-bottom: 3px solid $white;
+}
+
+nav .dropdown-menu { background-color: $dark }
+
+nav .dropdown-menu * { color: $white }
+
+nav .dropdown-menu .dropdown-item:hover *,
+nav .dropdown-menu .dropdown-item:focus * {
+  color: $dark;
+}
+/* End navbar */
+
+/* Start login page */
+.adminAreaLoginPage {
+  background-image: url('#{$imgDir}admin.jpg');
+  @extend %cover;
+  @extend %overHide;
+  padding: 20px 0;
+  color: $white
+}
+
+.adminAreaLoginPage .adminLogin {
+  margin: 50px auto;
+  padding: 30px;
+  @extend %cap;
+  @extend %overHide;
+  @extend %bgdark75;
+  color: $white;
+}
+
+.adminAreaLoginPage .adminLogin h3 { @extend %tc }
+
+.adminAreaLoginPage .adminLogin input:not([type="submit"]) {
+  background: none;
+  border: 1px solid $gray;
+  color: $white;
+}
+/* End login page */
+
+/* Start adminArea page */
+.adminArea { margin-bottom: 20px }
+
+.adminArea a {
+  color: $light;
+  @extend .no-decore;
+}
+
+.adminArea .stat * {
+  color: $light;
+}
+
+.adminArea .column {
+  @extend %tc;
+  @extend %rel;
+  @extend %overHide;
+  margin-bottom: 20px;
+}
+
+.adminArea .stat .column .card i,
+.adminArea .stat .column .card span {
+  font-size: 3em;
+}
+
+.adminArea .stat .column .card h6 {
+  margin: 10px 0;
+  @extend %cap;
+}
+
+.adminArea .stat .column a { @extend %block }
+
+.adminArea .stat .column .card {
+  @extend %rad10px;
+  @extend %trans;
+}
+
+.adminArea .stat .column .card * { color: $white }
+
+.adminArea .stat .column:nth-child(even) .card { background-color: $primary }
+.adminArea .stat .column:nth-child(even):hover .card { background-color: rgba($primary, .9) }
+
+.adminArea .stat .column:nth-child(odd) .card { background-color: $secondary }
+.adminArea .stat .column:nth-child(odd):hover .card { background-color: rgba($secondary, .9) }
+
+.adminArea .latest .table {
+  text-align: $left;
+  margin-bottom: 10px;
+  background-color: $white;
+  @extend %overHide;
+}
+
+.adminArea .latest .table thead { cursor: pointer }
+
+.adminArea .latest .table .comments.row { margin: 5px }
+/* End adminArea page */
+
+/* Start category page */
+/* End category page */
+
+/* Start items page */
+/* End items page */
+
+/* Start members page */
+.members-table img {
+  width: 30px;
+  height: 30px;
+}
+/* End members page */
+
+/* Start settings page */
+.settings .option {
+  @extend %block;
+  @extend %rel;
+  padding-#{$left}: 35px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  @include prefix(user-select, none);
+}
+
+.settings .option label { cursor: pointer }
+
+.settings .option input {
+  @extend %abs;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.settings .option .checkmark {
+  @extend %abs;
+  top: 5px;
+  #{$left}: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid $dark;
+}
+
+.settings .option input:checked ~ .checkmark {
+  background-color: $blue;
+}
+
+.settings .option .checkmark:after {
+  content: "";
+  @extend %abs;
+  #{$left}: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid $white;
+  border-width: 0 3px 3px 0;
+  @include prefix(transform, rotate(45deg));
+  @extend .hide;
+}
+
+.settings .option input:checked ~ .checkmark:after {
+  @extend %block
+}
+
+.settings input[type="submit"] { padding: 5px 25px }
+/* End settings page */
+
+/* Start footer */
+footer {
+  background-color: $dark;
+  padding: 10px 0px;
+  @extend %tc;
+  @extend %cap;
+  @extend %rel;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+footer * {
+  color: $white;
+}
+
+footer b { color: $light }
+/* End footer */
+
+/* Start tagisinput plugin costomize */
+.bootstrap-tagsinput { @extend %block }
+
+.bootstrap-tagsinput .tag { background-color: $primary }
+/* End tagisinput plugin costomize */
+
+/* Start Start media for screens max-width = 991px */
+@media (max-width: 991px) {
+  nav { padding: 15px !important }
+}

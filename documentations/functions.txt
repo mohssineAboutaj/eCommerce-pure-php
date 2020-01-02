@@ -1,0 +1,51 @@
+***/ This is documentation for all functions in this website /***
+************************************************************************
+#printTitle() => function print the title if exist , if not exist print Default
+
+#redirectToHome() => version: v1.0
+                  => redirct function , it's redirect the user to home if the request is not currect
+                  => accept 2 parametres
+                  => $errMsg: the error message who will appear if the request not currect
+                  => $time: time of show the $Msg ( default value is 3 seconds )
+#redirectToHome() => version: v2.0
+                  => redirct function v2.0 , it's redirect the user to home or previous page if the request is not currect
+                  => accept 3 parametres
+                  => $Msg: the message who will appear if the request not currect
+                  => $url: the link will redirct if the request not currect or the conditions not true
+                  => $time: time of show the $Msg ( default value is 3 seconds )
+#redirectTo() => version: v3.0
+              => redirct function v2.0 , it's redirect the user to home or previous page if the request is not currect
+              => accept 3 parametres
+              => $Msg: the message who will appear if the request not currect
+              => $url: the link will redirct if the request not currect or the conditions not true
+              => $time: time of show the $Msg , if $time = false appear button back to previous page ( default value is 3 seconds )
+
+#checkItemExist() => check if the item exist in database
+                  => accept 3 parametres
+                  => $select: the column name in database table
+                  => $tableName: the table name in database
+                  => $value: what do you search
+
+#calcItems() => version: v1.0
+             => function calculate the number of items in table
+             => accept 2 parametres
+             => $item: the item you want to calculate number of their
+             => $tableName: the table name in database
+
+#calcItems() => version: v2.0
+             => function calculate the number of items in table for members not registred
+             => accept 3 parametres
+             => $item: the item you want to calculate number of their
+             => $tableName: the table name in database
+             => $reg: the registred status ( default value is null )
+
+#getItems() => function ordering the items
+            => accept 4 parametres
+            => $select: the column name in database table
+            => $tableName: the table name in database
+            => $order: sort the items by name of any column in $tableName
+            => $limit: limit of items comming on $tableName
+
+#addClassActive() => function add class active on active link
+                  => accept 1 parametre
+                  => $name: name of the link for add active class on this

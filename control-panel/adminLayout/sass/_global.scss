@@ -1,0 +1,217 @@
+// file for import only
+
+// start functions
+@mixin prefix($propertie, $value){
+	-webkit-#{$propertie}: $value;
+	-moz-#{$propertie}: $value;
+	-ms-#{$propertie}: $value;
+	-o-#{$propertie}: $value;
+	#{$propertie}: $value;  
+}
+// End functions
+
+// Start page Direction
+$left: left;
+
+$right: right;
+// End page Direction
+
+// Start social media and websites brand color
+$facebook:   #3b5998;
+$twitter:    #55acee;
+$youtube:    #ff0000;
+$googlePlus: #dd4b39;
+$linkedIn:   #007bb5;
+$whatsapp:   #4dc247;
+$github:     #24292e;
+$codepen:    #191919;
+// End social media and website brand color
+
+// bootstrap 4 colors
+$blue:   #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink:   #e83e8c !default;
+$red:    #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green:  #28a745 !default;
+$teal:   #20c997 !default;
+$cyan:   #17a2b8 !default;
+
+// Start placeholder classes
+%ib { display: inline-block }
+
+%block { display: block }
+
+%nopm { padding: 0;margin: 0 }
+
+%overHide { overflow: hidden }
+
+%fl-l { float: left }
+
+%fl-r { float: right }
+
+%nofl { float: none }
+
+%no-border { border: none }
+
+.no-decore, .no-decore li, .no-decore a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.no-decore a { color: $light }
+
+%tc { text-align: center }
+
+%cap { text-transform: capitalize }
+
+%upper { text-transform: uppercase }
+
+%rel { position: relative }
+
+%abs { position: absolute }
+
+.reset-all, .reset-all * {
+  @extend %no-border;
+  @extend .no-decore;
+  @extend %nopm;
+  @extend %nofl;
+}
+
+%cover { @include prefix(background-size, cover) }
+
+%circle { @include prefix(border-radius, 50%) }
+
+%trans {
+  @include prefix(transition, all .5s ease-in-out);
+  cursor: pointer;
+}
+
+.hide { display: none }
+
+.show { @extend %block }
+// border radius placholder classes
+@for $i from 5 through 50 {
+	// by pixel
+	%rad#{$i}px {
+		@include prefix(border-radius, $i + px);
+	}
+
+	// by percentage
+	%rad#{$i} {
+		@include prefix(border-radius, $i);
+	}
+}
+
+%overlay {
+	@extend %abs;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+%flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+%row {
+	@extend %flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+%row-around {
+	@extend %row;
+	justify-content: space-around;
+}
+
+%row-between {
+	@extend %row;
+	justify-content: space-between;
+}
+
+%hor-center {
+	@extend %row;
+	justify-content: center;
+}
+
+%ver-center {
+	@extend %row;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+%grid-full { width: 100% }
+%grid-half { width: 50% }
+%grid-1-4 { width: 25% }
+%grid-3-4 { width: 75% }
+%grid-1-3 { width: calc(100% / 3) }
+%grid-2-3 { width: calc((100% / 3) * 2) }
+
+// real classes
+.full-centering {
+	@extend %row;
+	@extend %hor-center;
+	@extend %ver-center;
+	@extend %grid-full;
+	height: 100%;
+}
+
+@for $opacity from 100 through 1 {
+  %bgdark#{$opacity} {
+  	background-color: rgba($dark, ($opacity / 100)); 
+	}
+}
+@for $opacity from 10 through 1 {
+  %bgdark#{$opacity} {
+    background-color: rgba($dark, ($opacity / 10)); 
+  }
+}
+
+.section {
+  padding: 50px 0;
+  @extend %rel;
+}
+
+// section separator styles
+.section-separator {
+  width: 100%;
+  height: 0;
+  @extend %abs;
+  background-color: none !important;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.section-separator::after, .section-separator::before {
+  content: '';
+  width: 50%;
+  height: 50px;
+  @extend %abs;
+  top: -25px;
+  @include prefix(box-shadow, 0 10px 10px inherit);
+  z-index: 2;
+}
+
+.section-separator::after {
+  left: 0;
+  @include prefix(transform, skewY(5deg));
+}
+
+.section-separator::before {
+  right: 0;
+  @include prefix(transform, skewY(-5deg));
+}
+
+// End placeholder classes
